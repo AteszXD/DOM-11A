@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobókocka Párbaj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 Dobókocka Párbaj 🎲</h1>
+        
+        <div class="players-container">
+            <div class="player">
+                <h2>Játékos 1</h2>
+                <div class="score-container">
+                    <span class="score-label">Pontszám:</span>
+                    <span class="score" id="score1">0</span>
+                </div>
+                <img id="dice1" src="1.png" alt="Dobókocka 1" class="dice">
+            </div>
+            
+            <div class="vs">VS</div>
+            
+            <div class="player">
+                <h2>Játékos 2</h2>
+                <div class="score-container">
+                    <span class="score-label">Pontszám:</span>
+                    <span class="score" id="score2">0</span>
+                </div>
+                <img id="dice2" src="1.png" alt="Dobókocka 2" class="dice">
+            </div>
+        </div>
+        
+        <div class="result" id="result">
+            Nyomd meg a Dobás gombot!
+        </div>
+        
+        <div class="buttons">
+            <button id="rollBtn" class="btn btn-roll">🎲 Dobás 🎲</button>
+            <button id="resetBtn" class="btn btn-reset">🔄 Pontok lenullázása 🔄</button>
+        </div>
+    </div>
+    
+</body>
+</html>
