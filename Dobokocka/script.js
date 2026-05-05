@@ -14,7 +14,7 @@ function rollDice() {
 }
 
 function updateDiceImage(diceElement, number) {
-    diceElement.src = `kepek/${number}.png`;
+    diceElement.src = `${number}.png`;
     diceElement.alt = `Dobás eredménye: ${number}`;
 }
 
@@ -28,8 +28,8 @@ function resetScores() {
     player2Score = 0;
     updateScore();
     resultElement.innerHTML = '🔄 Pontok lenullázva! Új játék kezdődhet! 🔄';
-    dice1.src = 'kepek/1.png';
-    dice2.src = 'kepek/1.png';
+    dice1.src = '1.png';
+    dice2.src = '1.png';
     resultElement.style.background = '#f0f0f0';
     resultElement.style.color = '#333';
 }
@@ -78,3 +78,11 @@ function rollGame() {
         }
     }, 150);
 }
+
+rollBtn.addEventListener('click', rollGame);
+resetBtn.addEventListener('click', resetScores);
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Dobókocka Párbaj játék elindult!');
+    resetScores();
+});
