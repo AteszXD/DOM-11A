@@ -47,3 +47,34 @@ function determineWinner(roll1, roll2) {
         return `🤝 Döntetlen! (${roll1} - ${roll2}) 🤝`;
     }
 }
+
+function rollAnimation(diceElement) {
+    diceElement.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        diceElement.style.transform = 'rotate(0deg)';
+    }, 300);
+}
+
+function rollGame() {
+    const roll1 = rollDice();
+    const roll2 = rollDice();
+    
+    rollAnimation(dice1);
+    rollAnimation(dice2);
+    
+    setTimeout(() => {
+        updateDiceImage(dice1, roll1);
+        updateDiceImage(dice2, roll2);
+        
+        const resultText = determineWinner(roll1, roll2);
+        resultElement.innerHTML = resultText;
+        
+        if (resultText.includes('nyert')) {
+            resultElement.style.background = '#d4edda';
+            resultElement.style.color = '#155724';
+        } else if (resultText.includes('Döntetlen')) {
+            resultElement.style.background = '#fff3cd';
+            resultElement.style.color = '#856404';
+        }
+    }, 150);
+}
