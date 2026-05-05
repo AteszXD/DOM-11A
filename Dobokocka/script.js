@@ -86,3 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Dobókocka Párbaj játék elindult!');
     resetScores();
 });
+
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+        event.preventDefault();
+        rollGame();
+    } else if (event.code === 'KeyR') {
+        resetScores();
+    }
+});
