@@ -66,3 +66,16 @@ function endGame() {
   });
   alert(`Játék vége! Pontszámod: ${score}`);
 }
+
+holes.forEach(hole => {
+  hole.addEventListener("click", () => {
+    if (hole === currentHole) {
+      score++;
+      scoreDisplay.textContent = score;
+      hole.innerHTML = "";
+      currentHole = null;
+    }
+  });
+});
+
+startBtn.addEventListener("click", startGame);
