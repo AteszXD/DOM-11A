@@ -49,3 +49,20 @@ function startGame() {
 
   }, 1000);
 }
+
+function increaseDifficulty(newSpeed) {
+  moleSpeed = newSpeed;
+  clearInterval(moleTimer);
+  moleTimer = setInterval(() => {
+    randomHole();
+  }, moleSpeed);
+}
+
+function endGame() {
+  clearInterval(gameTimer);
+  clearInterval(moleTimer);
+  holes.forEach(hole => {
+    hole.innerHTML = "";
+  });
+  alert(`Játék vége! Pontszámod: ${score}`);
+}
